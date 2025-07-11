@@ -66,7 +66,10 @@ export async function crop() {
                 await sharp(inputFile).resize(cropWidth, cropHeight, { fit: 'cover' }).toFormat('jpeg', { quality: 99 }).toFile(`build/images/crop/jpg/${fileName}-crop.jpg`);
             }
         }
-
+        
+        if (fs.existsSync('src/assets/icons')) {
+            src('src/assets/icons/**/*.svg').pipe(dest('build/images/svg'));
+        }
         // Copy icons and SVG images without modification
         src('src/assets/images/**/*.ico').pipe(dest('build/images/ico'));
         src('src/assets/images/**/*.svg').pipe(dest('build/images/svg'));
