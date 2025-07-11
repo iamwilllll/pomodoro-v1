@@ -4,9 +4,9 @@
 html {
     font-size: 62.5%; /* 1rem = 10px (so, 1.6rem = 16px) */
     box-sizing: border-box;
-    width: 100%;
     scroll-behavior: smooth;
     scroll-padding-top: 0rem;
+    height: 100%;
 }
 
 /* ----- Inherit box-sizing in all elements and pseudo-elements ----- */
@@ -27,10 +27,23 @@ body {
     padding: 0;
     height: 100%;
     line-height: 1.8;
+    background-color: var(--bg-color);
+}
+
+main {
+    height: 100%;
+    width: 100%;
+    padding: 5.5rem;
+    display: flex;
+    gap: 5rem;
+
+    .container {
+        width: 50%;
+        height: 100%;
+    }
 }
 
 /** ----- Global styles ----- **/
-
 p {
     font-size: 2rem;
     color: v.$black;

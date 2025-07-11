@@ -95,9 +95,9 @@ export function html() {
 // Remove `/build` from paths inside HTML files
 export function fixPaths() {
     return src('build/**/*.html')
-        .pipe(replace(/href="\/build([^"]*)"/g, 'href="$1"'))
-        .pipe(replace(/src="\/build([^"]*)"/g, 'src="$1"'))
-        .pipe(replace(/srcset="\/build([^"]*)"/g, 'srcset="$1"'))
+        .pipe(replace(/href="\/build([^"]*)"/g, 'href=".$1"'))
+        .pipe(replace(/src="\/build([^"]*)"/g, 'src=".$1"'))
+        .pipe(replace(/srcset="\/build([^"]*)"/g, 'srcset=".$1"'))
         .pipe(dest('build'));
 }
 

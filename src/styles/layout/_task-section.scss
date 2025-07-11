@@ -1,0 +1,130 @@
+// Import base variables and mixins
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+/* Main task container */
+.task {
+    padding: 2.5rem;
+    border: 0.1rem solid var(--line-color);
+    border-radius: 2.5rem;
+
+    /* Article container for task content */
+    article {
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+        min-height: 100%;
+    }
+}
+
+/* Divider line below header */
+.task__header-line {
+    width: 90%;
+    height: 0.1rem;
+    background-color: var(--line-color);
+}
+
+/* Task header section */
+.task__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--primary-font-color);
+
+    /* Container for title/subtitle */
+    div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+/* Title styling */
+.task__title,
+.task__subtitle {
+    margin: 0;
+    line-height: 1.5; // Consistent line height
+}
+
+.task__title {
+    font-weight: v.$bold; // Using bold weight from variables
+}
+
+/* Subtitle styling */
+.task__subtitle {
+    font-size: 2rem;
+}
+
+/* Checkmark container */
+.task__check-container {
+    width: 7.5rem;
+    height: 7.5rem;
+    padding: 1.5rem;
+    border-radius: 1.5rem;
+    background-color: var(--primary-color);
+}
+
+/* Main task body */
+.task__body {
+    flex: 1; // Takes available space
+
+    /* Checklist items */
+    li {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+
+        /* Custom checkbox */
+        input[type='checkbox'] {
+            appearance: none;
+            background-color: var(--bg-color);
+            border: 2px solid var(--line-color);
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+            cursor: pointer;
+
+            &:checked {
+                background-color: var(--primary-color);
+            }
+        }
+
+        /* Checkbox label */
+        label {
+            color: var(--secondary-font-color);
+        }
+    }
+}
+
+/* Task footer */
+.task__footer {
+    /* Form layout */
+    form {
+        display: flex;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    /* Shared input styles */
+    input {
+        padding: 1rem;
+        outline: none;
+        border: none;
+        border-radius: 0.5rem;
+    }
+
+    /* Text input field */
+    .task__input {
+        width: 70%;
+        background-color: var(--secondary-color);
+        color: var(--secondary-font-color);
+    }
+
+    /* Submit button */
+    .task__submit {
+        width: 25%;
+        background-color: var(--primary-color);
+        color: v.$white; // Using white color from variables
+        cursor: pointer; // Add pointer for better UX
+    }
+}

@@ -1,11 +1,11 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <!-- Import 'Raleway' font -->
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <!-- Import 'ROBOTO' font -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet" />
-        <!-- Import 'Raleway' font -->
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+        <!-- Import 'ROBOTO' font -->
 
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,13 +13,52 @@
         <meta name="author" content="Wilfryn Viloria Rosario" />
         <meta name="keywords" content="pomodoro, pomodoro technique, timer, productivity, focus, concentration, time management, study, distraction-free work, task timer, pomodoro app, stopwatch, habit improvement, breaks, deep work, productivity tool" />
         <link rel="canonical" href="https://pomodoro-focus-app-wvr.netlify.app" />
-        <link rel="stylesheet" href="/css/index.css" />
-        <title>Pomodoro Focus App | Wilfryn Viloria - Desarrollador Front-End</title>
+        <link rel="stylesheet" href="/build/css/index.css" />
+        <title>Pomodoro Focus App | Wilfryn Viloria - Front-End Developer</title>
     </head>
     <body>
-        <header></header>
-        <main></main>
-        <footer></footer>
+        <main>
+            <!-- container for tasks (left side of the page) -->
+            <section class="container task" id="task">
+                <article>
+                    <div class="task__header-line"></div>
+                    <header class="task__header">
+                        <!-- header of the tasks section -->
+                        <div class="task__header-content">
+                            <h1 class="task__title">Task List</h1>
+                            <h2 class="task__subtitle">Improve your productivity using the Pomodoro technique</h2>
+                        </div>
+                        <div class="task__check-container">
+                            <!-- check icon -->
+                            <img src="/build/images/svg/check-icon.svg" alt="check icon" aria-label="check icon" />
+                        </div>
+                    </header>
+                    <!-- container for tasks -->
+                    <ul class="task__body reset-list"></ul>
+                    <!-- Task adding section -->
+                    <footer class="task__footer">
+                        <!-- Form to add tasks -->
+                        <form action="" class="task__form">
+                            <input type="text" placeholder="Add a new task!" class="task__input" />
+                            <input type="submit" name="" id="" value="Add task" class="task__submit" />
+                        </form>
+                        <!-- end of form -->
+                    </footer>
+                </article>
+            </section>
+            <!-- end of tasks section -->
+
+            <!-- container for the timer (right side of the page) -->
+
+            <section class="container timer" id="timer">
+                <!-- button to change the theme of the page (dark-light) -->
+                <button id="toggle-theme" class="button">
+                    <img src="/build/images/svg/sun-icon.svg" alt="sun icon to toggle theme"  />
+                </button>
+
+                <article></article>
+            </section>
+        </main>
     </body>
-    <script src="/JavaScript/script.js" defer></script>
+    <script src="/build/JavaScript/script.js" defer></script>
 </html>

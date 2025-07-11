@@ -1,8 +1,12 @@
 /* Import Sass style sheets */
 
 /* Base styles */
-@forward './base/globals';
-@forward './base/mixins';
 @forward './base/normalize';
-@forward './base/utilities';
 @forward './base/variables';
+@forward './base/mixins';
+@forward './base/globals';
+@forward './base/utilities';
+
+/* layout styles */
+@forward './layout/task-section';
+@forward './layout/timer-section';

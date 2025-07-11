@@ -1,13 +1,6 @@
 @use 'variables' as v;
 @use 'mixins' as m;
 
-.container {
-    width: 95%;
-    max-width: 120rem;
-    margin: 0 auto;
-    padding: 5rem;
-}
-
 .reset-list {
     list-style: none;
     padding: 0;
