@@ -1,0 +1,46 @@
+{
+    "name": "pomodoro",
+    "version": "1.0.0",
+    "description": "A website that uses the 'pomodoro' technique to help you be more efficient in your tasks.",
+    "main": "gulpfile.js",
+    "type": "module",
+    "scripts": {
+        "deploy": "gulp deploy",
+        "dev": "gulp build"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/iamwilllll/pomodoro-v1.git"
+    },
+    "keywords": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Sass",
+        "NPM",
+        "Gulp",
+        "Git",
+        "GitHub",
+        "pomodoro"
+    ],
+    "author": "Wilfryn Viloria Rosario",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/iamwilllll/pomodoro-v1/issues"
+    },
+    "homepage": "https://github.com/iamwilllll/pomodoro-v1#readme",
+    "devDependencies": {
+        "cssnano": "^7.0.7",
+        "gulp": "^5.0.1",
+        "gulp-postcss": "^10.0.0",
+        "gulp-prettier": "^6.0.0",
+        "gulp-replace": "^1.1.4",
+        "gulp-sass": "^6.0.1",
+        "gulp-terser": "^2.1.0",
+        "gulp-typescript": "^6.0.0-alpha.1",
+        "postcss": "^8.5.6",
+        "prettier": "^3.6.2",
+        "sass": "^1.89.2",
+        "sharp": "^0.34.3"
+    }
+}

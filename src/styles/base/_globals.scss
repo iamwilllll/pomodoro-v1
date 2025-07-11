@@ -1,0 +1,76 @@
+@use 'variables' as v;
+
+/* ----- Set the base font size on the HTML element for easier use of rem, em, and px. ----- */
+html {
+    font-size: 62.5%; /* 1rem = 10px (so, 1.6rem = 16px) */
+    box-sizing: border-box;
+    width: 100%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 0rem;
+}
+
+/* ----- Inherit box-sizing in all elements and pseudo-elements ----- */
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+/* ----- Set margins and padding in the body to avoid unwanted spaces ----- */
+body {
+    font-optical-sizing: auto;
+    font-family: v.$primary-font;
+    font-style: normal;
+    font-size: 1.8rem;
+    color: v.$black;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    line-height: 1.8;
+}
+
+/** ----- Global styles ----- **/
+
+p {
+    font-size: 2rem;
+    color: v.$black;
+}
+
+a {
+    text-decoration: none;
+}
+
+img,
+picture {
+    width: 100%;
+    display: block;
+}
+
+h1,
+h2,
+h3 {
+    font-family: v.$primary-font;
+    font-weight: 300;
+    margin: 5rem;
+}
+
+h1 {
+    font-size: 3.8rem;
+}
+
+h2 {
+    font-size: 3.4rem;
+}
+
+h3 {
+    font-size: 3rem;
+}
+
+h4 {
+    font-size: 2.6rem;
+}
+
+img {
+    height: auto;
+    display: block;
+}
