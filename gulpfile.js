@@ -105,7 +105,7 @@ export function fixPaths() {
         .pipe(replace(/href="\/build([^"]*)"/g, 'href=".$1"'))
         .pipe(replace(/src="\/build([^"]*)"/g, 'src=".$1"'))
         .pipe(replace(/srcset="\/build([^"]*)"/g, 'srcset=".$1"'))
-        .pipe(dest('build/JavaScript'));
+        .pipe(dest('build'));
 
     return merge(html, js); // We unite the two processes
 }
