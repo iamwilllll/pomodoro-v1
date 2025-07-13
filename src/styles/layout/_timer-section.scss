@@ -1,0 +1,22 @@
+// Import base variables and mixins
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.timer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.timer-toggle-theme {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 5rem;
+    height: 5rem;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
