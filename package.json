@@ -33,6 +33,7 @@
         "cssnano": "^7.0.7",
         "eslint": "^9.31.0",
         "gulp": "^5.0.1",
+        "gulp-concat": "^2.6.1",
         "gulp-postcss": "^10.0.0",
         "gulp-prettier": "^6.0.0",
         "gulp-replace": "^1.1.4",

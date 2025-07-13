@@ -1,4 +1,4 @@
-// cssnano gulp gulp-postcss gulp-prettier gulp-replace gulp-sass gulp-terser postcss prettier sass sharp eslint
+// cssnano gulp gulp-postcss gulp-prettier gulp-replace gulp-sass gulp-terser postcss prettier sass sharp eslint gulp-concat
 import * as dartSass from 'sass';
 import gulpSass from 'gulp-sass';
 import terser from 'gulp-terser';
@@ -13,12 +13,17 @@ import postcss from 'gulp-postcss';
 import cssnano from 'cssnano';
 import replace from 'gulp-replace';
 import merge from 'merge-stream';
+import concat from 'gulp-concat';
 
 const sass = gulpSass(dartSass); // Initialize gulp-sass with Dart Sass
 
 // Task to compile and minify JavaScript files
+
 export function compileJS() {
-    return src('src/scripts/**/*.js').pipe(terser()).pipe(dest('build/JavaScript'));
+    return src('src/scripts/**/*.js')
+        .pipe(concat('script.js')) // Combine all the JS into one called script.js
+        .pipe(terser()) // Minify the combined file
+        .pipe(dest('build/JavaScript'));
 }
 
 // Task to compile SCSS, minify it, and generate sourcemaps
