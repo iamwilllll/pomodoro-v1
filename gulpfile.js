@@ -1,4 +1,4 @@
-// cssnano gulp gulp-postcss gulp-prettier gulp-replace gulp-sass gulp-terser postcss prettier sass sharp
+// cssnano gulp gulp-postcss gulp-prettier gulp-replace gulp-sass gulp-terser postcss prettier sass sharp eslint
 import * as dartSass from 'sass';
 import gulpSass from 'gulp-sass';
 import terser from 'gulp-terser';
