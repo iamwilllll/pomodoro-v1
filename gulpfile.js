@@ -12,6 +12,7 @@ import { src, dest, watch, series } from 'gulp';
 import postcss from 'gulp-postcss';
 import cssnano from 'cssnano';
 import replace from 'gulp-replace';
+import merge from 'merge-stream';
 
 const sass = gulpSass(dartSass); // Initialize gulp-sass with Dart Sass
 
@@ -94,11 +95,19 @@ export function html() {
 
 // Remove `/build` from paths inside HTML files
 export function fixPaths() {
-    return src('build/**/*.html')
+    const html = src('build/**/*.html')
         .pipe(replace(/href="\/build([^"]*)"/g, 'href=".$1"'))
         .pipe(replace(/src="\/build([^"]*)"/g, 'src=".$1"'))
         .pipe(replace(/srcset="\/build([^"]*)"/g, 'srcset=".$1"'))
         .pipe(dest('build'));
+
+    const js = src('build/**/*.js')
+        .pipe(replace(/href="\/build([^"]*)"/g, 'href=".$1"'))
+        .pipe(replace(/src="\/build([^"]*)"/g, 'src=".$1"'))
+        .pipe(replace(/srcset="\/build([^"]*)"/g, 'srcset=".$1"'))
+        .pipe(dest('build/JavaScript'));
+
+    return merge(html, js); // We unite the two processes
 }
 
 // Watch source files for changes during development
