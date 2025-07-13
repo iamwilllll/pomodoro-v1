@@ -1,80 +1,109 @@
 <!doctype html>
 <html lang="en">
     <head>
+        <!-- Define document character encoding -->
         <meta charset="UTF-8" />
+        <!-- Configure responsive viewport settings -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- Application description for SEO and social sharing -->
         <meta name="description" content="Pomodoro Focus App is a minimalist tool designed to improve your productivity using the Pomodoro Technique. Alternate between focused work sessions and short breaks to maximize your focus, avoid mental fatigue, and stay motivated throughout the day." />
+        <!-- Author information -->
         <meta name="author" content="Wilfryn Viloria Rosario" />
+        <!-- SEO keywords for search engine optimization -->
         <meta name="keywords" content="pomodoro, pomodoro technique, timer, productivity, focus, concentration, time management, study, distraction-free work, task timer, pomodoro app, stopwatch, habit improvement, breaks, deep work, productivity tool" />
+        <!-- Canonical URL to prevent duplicate content issues -->
         <link rel="canonical" href="https://pomodoro-focus-app-wvr.netlify.app" />
 
-        <!-- Import 'ROBOTO' font -->
+        <!-- Import 'ROBOTO' font from Google Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
-        <!-- Import 'ROBOTO' font -->
+        <!-- End of font import -->
 
-        <!-- add 'svg and png' favicon -->
+        <!-- Favicon configuration for multiple formats -->
         <link rel="icon" type="image/png" sizes="32x32" href="./images/png/favicon-32x32.png" />
         <link rel="icon" type="image/svg+xml" href="./images/svg/favicon.svg" />
-        <!-- add 'svg and png' favicon -->
+        <!-- End of favicon configuration -->
 
-        <!-- add '.css' stylesheet -->
+        <!-- Link to main CSS stylesheet -->
         <link rel="stylesheet" href="./css/index.css" />
-        <!-- add '.css' stylesheet -->
+        <!-- End of CSS link -->
 
+        <!-- Document title shown in browser tab -->
         <title>Pomodoro Focus App | Wilfryn Viloria - Front-End Developer</title>
     </head>
     <body>
+        <!-- Main content container -->
         <main>
-            <!-- container for tasks (left side of the page) -->
+            <!-- Task section - left panel -->
             <section class="container task" id="task">
                 <article>
+                    <!-- Decorative header line element -->
                     <div class="task__header-line"></div>
+
+                    <!-- Task section header -->
                     <header class="task__header">
-                        <!-- header of the tasks section -->
+                        <!-- Header content with title and subtitle -->
                         <div class="task__header-content">
                             <h1 class="task__title">Task List</h1>
                             <h2 class="task__subtitle">Improve your productivity using the Pomodoro technique</h2>
                         </div>
+                        <!-- Checkmark icon container -->
                         <div class="task__check-container">
-                            <!-- check icon -->
                             <img src="./images/svg/check-icon.svg" alt="check icon" aria-label="check icon" />
                         </div>
                     </header>
-                    <!-- container for tasks -->
-                    <ul class="task__body reset-list"></ul>
-                    <!-- Task adding section -->
+
+                    <!-- Container for task items (dynamically populated) -->
+                    <ul class="task__body reset-list" id="task-container"></ul>
+
+                    <!-- Task input section -->
                     <footer class="task__footer">
-                        <!-- Form to add tasks -->
-                        <form action="" class="task__form">
-                            <input type="text" placeholder="Add a new task!" class="task__input" />
-                            <input type="submit" name="" id="" value="Add task" class="task__submit" />
+                        <!-- Form for adding new tasks -->
+                        <form action="" class="task__form" id="task-form">
+                            <input type="text" placeholder="Add a new task!" class="task__input" id="task-input" />
+                            <input type="submit" value="Add task" class="task__submit" />
                         </form>
-                        <!-- end of form -->
+                        <!-- End of task form -->
                     </footer>
                 </article>
             </section>
-            <!-- end of tasks section -->
+            <!-- End of task section -->
 
-            <!-- container for the timer (right side of the page) -->
+            <!-- Timer section - right panel -->
+            <section class="timer container" id="timer">
+                <!-- Timer control buttons -->
+                <div class="timer__controls">
+                    <!-- configuration button -->
+                    <button class="button timer__button timer__button--configuration" id="configuration-button"></button>
 
-            <section class="container timer" id="timer">
-                <!-- button to change the theme of the page (dark-light) -->
-                <button id="toggle-theme" class="button timer-toggle-theme"></button>
+                    <!-- Theme toggle button (light/dark mode) -->
+                    <button class="button timer__button timer__button--theme" id="toggle-theme"></button>
+                </div>
 
-                <article>
-                    <header>
-                        <p>25:00</p>
+                <!-- Timer display panel -->
+                <article class="timer__panel">
+                    <!-- Timer display area -->
+                    <header class="timer__header">
+                        <p class="timer__time">25:00</p>
                     </header>
-                    <footer>
-                        <button></button>
-                        <button></button>
-                        <button></button>
+
+                    <!-- Timer control buttons -->
+                    <footer class="timer__footer">
+                        <!-- Reset/stop button -->
+                        <button class="timer__button button">
+                            <img src="./images/svg/clock-icon-off.svg" alt="Stop timer" class="timer__icon" />
+                        </button>
+                        <!-- Start/pause button -->
+                        <button class="timer__button button">
+                            <img src="./images/svg/play-icon-off.svg" alt="Start timer" class="timer__icon" />
+                        </button>
                     </footer>
                 </article>
             </section>
         </main>
+
+        <!-- Load JavaScript file with defer attribute -->
+        <script src="./JavaScript/script.js" defer></script>
     </body>
-    <script src="./JavaScript/script.js" defer></script>
 </html>

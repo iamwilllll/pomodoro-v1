@@ -9,14 +9,37 @@
     align-items: center;
 }
 
-.timer-toggle-theme {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 5rem;
-    height: 5rem;
-
+.timer__button {
     &:hover {
         cursor: pointer;
     }
+}
+
+.timer__controls {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.timer__button--theme,
+.timer__button--configuration {
+    width: 5rem;
+    height: 5rem;
+}
+
+.timer__time {
+    font-size: 10rem;
+    font-weight: v.$bold;
+    color: var(--primary-font-color);
+    margin: 0;
+    line-height: 1.5;
+}
+
+.timer__footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--secondary-color);
+    padding: 2rem;
+    border-radius: 5rem;
 }
