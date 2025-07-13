@@ -22,6 +22,8 @@ class Task {
         const taskInputHTML = document.querySelector('#task-input');
 
         if (taskInputHTML.value.trim()) taskManager.saveNewTask(taskInputHTML.value);
+        
+        taskManager.clearInput(taskInputHTML);
     }
 
     saveNewTask(inputTaskValue) {
@@ -84,6 +86,10 @@ class Task {
             // Add to container
             taskContainerHTML.appendChild(LI);
         });
+    }
+
+    clearInput(input) {
+        input.value = '';
     }
 }
 
